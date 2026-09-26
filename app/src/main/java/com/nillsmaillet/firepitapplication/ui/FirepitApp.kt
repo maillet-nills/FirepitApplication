@@ -36,7 +36,7 @@ fun FirepitApp (){
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = Destination.LIBRARY.route,
+            startDestination = Destination.HOME.route,
             modifier = Modifier.padding(innerPadding),
             enterTransition = {
                 fadeIn(animationSpec = tween(100))
@@ -45,9 +45,9 @@ fun FirepitApp (){
                 fadeOut(animationSpec = tween(100))
             }
         ){
+            composable (Destination.HOME.route){ PlaceholderScreen(Destination.HOME.label)}
             composable (Destination.LIBRARY.route){ PlaceholderScreen(Destination.LIBRARY.label)}
             composable (Destination.JOURNAL.route){ PlaceholderScreen(Destination.JOURNAL.label)}
-            composable (Destination.STATS.route){ PlaceholderScreen(Destination.STATS.label)}
             composable (Destination.PROFILE.route){ PlaceholderScreen(Destination.PROFILE.label)}
         }
     }
