@@ -23,7 +23,7 @@ fun FirepitApp (){
                 Destination.entries.forEach { destination ->
                     NavigationBarItem(
                         selected = false,
-                        onClick = {},
+                        onClick = { navController.navigate(destination.route) },
                         icon = { Icon(destination.icon, contentDescription = destination.label) },
                         label = { Text(destination.label) }
                     )
