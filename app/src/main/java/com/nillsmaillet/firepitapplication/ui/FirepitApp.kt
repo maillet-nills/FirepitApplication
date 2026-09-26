@@ -1,5 +1,8 @@
 package com.nillsmaillet.firepitapplication.ui
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -34,7 +37,13 @@ fun FirepitApp (){
         NavHost(
             navController = navController,
             startDestination = Destination.LIBRARY.route,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier.padding(innerPadding),
+            enterTransition = {
+                fadeIn(animationSpec = tween(100))
+            },
+            exitTransition = {
+                fadeOut(animationSpec = tween(100))
+            }
         ){
             composable (Destination.LIBRARY.route){ PlaceholderScreen(Destination.LIBRARY.label)}
             composable (Destination.JOURNAL.route){ PlaceholderScreen(Destination.JOURNAL.label)}
