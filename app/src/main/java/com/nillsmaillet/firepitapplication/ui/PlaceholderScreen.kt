@@ -1,20 +1,21 @@
 package com.nillsmaillet.firepitapplication.ui
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.nillsmaillet.firepitapplication.ui.components.FirepitSectionTitle
 
 @Composable
 fun PlaceholderScreen(title: String) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center,
+    Column(
+        modifier = Modifier.padding(horizontal = 35.dp, vertical = 40.dp),
     ) {
-        Text(text = title)
+        FirepitSectionTitle("Welcome !")
     }
 }
 
