@@ -39,7 +39,7 @@ fun FirepitApp (){
             composable (Destination.LIBRARY.route){ PlaceholderScreen(Destination.LIBRARY.label)}
             composable (Destination.JOURNAL.route){ PlaceholderScreen(Destination.JOURNAL.label)}
             composable (Destination.STATS.route){ PlaceholderScreen(Destination.STATS.label)}
-            composable (Destination.SETTINGS.route){ PlaceholderScreen(Destination.SETTINGS.label)}
+            composable (Destination.PROFILE.route){ PlaceholderScreen(Destination.PROFILE.label)}
         }
     }
 }
