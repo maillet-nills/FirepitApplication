@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.nillsmaillet.firepitapplication.ui.navigation.Destination
 import com.nillsmaillet.firepitapplication.ui.navigation.FirepitNavigationBar
 import com.nillsmaillet.firepitapplication.ui.screens.FirepitHomeScreen
+import com.nillsmaillet.firepitapplication.ui.screens.FirepitLibraryScreen
 
 @Composable
 fun FirepitApp (){
@@ -37,7 +38,7 @@ fun FirepitApp (){
             }
         ){
             composable (Destination.HOME.route){ FirepitHomeScreen(Destination.HOME.label)}
-            composable (Destination.LIBRARY.route){ PlaceholderScreen(Destination.LIBRARY.label)}
+            composable (Destination.LIBRARY.route){ FirepitLibraryScreen() }
             composable (Destination.JOURNAL.route){ PlaceholderScreen(Destination.JOURNAL.label)}
             composable (Destination.PROFILE.route){ PlaceholderScreen(Destination.PROFILE.label)}
         }
