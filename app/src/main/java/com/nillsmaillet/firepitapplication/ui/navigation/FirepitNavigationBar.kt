@@ -24,7 +24,7 @@ fun FirepitNavigationBar(
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
-        Destination.entries.forEach { destination ->
+        Destination.entries.filter { it.isInBottomBar }.forEach { destination ->
             NavigationBarItem(
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,

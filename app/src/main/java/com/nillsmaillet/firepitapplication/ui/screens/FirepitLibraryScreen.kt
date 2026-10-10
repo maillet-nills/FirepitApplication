@@ -7,8 +7,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -19,9 +17,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.nillsmaillet.firepitapplication.ui.components.FirepitSectionTitle
+import com.nillsmaillet.firepitapplication.ui.navigation.Destination
 
 @Composable
-fun FirepitLibraryScreen() {
+fun FirepitLibraryScreen(onAddBookClick: () -> Unit) {
     val spacer = Modifier.height(20.dp)
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -36,13 +35,13 @@ fun FirepitLibraryScreen() {
         }
 
         FloatingActionButton(
-            onClick = {},
+            onClick = onAddBookClick,
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(24.dp),
             containerColor = MaterialTheme.colorScheme.primary
         ) {
-            Icon(Icons.Default.Add, contentDescription = "Add book")
+            Icon(Destination.ADD_BOOK.icon, contentDescription = Destination.ADD_BOOK.label)
         }
     }
 }

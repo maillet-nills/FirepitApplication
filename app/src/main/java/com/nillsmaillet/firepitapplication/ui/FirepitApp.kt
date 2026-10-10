@@ -13,6 +13,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.nillsmaillet.firepitapplication.ui.navigation.Destination
 import com.nillsmaillet.firepitapplication.ui.navigation.FirepitNavigationBar
+import com.nillsmaillet.firepitapplication.ui.screens.FirepitAddBookScreen
 import com.nillsmaillet.firepitapplication.ui.screens.FirepitHomeScreen
 import com.nillsmaillet.firepitapplication.ui.screens.FirepitLibraryScreen
 
@@ -38,7 +39,12 @@ fun FirepitApp (){
             }
         ){
             composable (Destination.HOME.route){ FirepitHomeScreen(Destination.HOME.label)}
-            composable (Destination.LIBRARY.route){ FirepitLibraryScreen() }
+            composable (Destination.LIBRARY.route){
+                FirepitLibraryScreen { navController.navigate(Destination.ADD_BOOK.route) }
+            }
+            composable (Destination.ADD_BOOK.route) {
+                FirepitAddBookScreen { navController.popBackStack() }
+            }
             composable (Destination.JOURNAL.route){ PlaceholderScreen(Destination.JOURNAL.label)}
             composable (Destination.PROFILE.route){ PlaceholderScreen(Destination.PROFILE.label)}
         }
